@@ -2,16 +2,16 @@ package com.green.user.dto;
 
 public class UserDto {
 	// Fields
-	private String userid;
-	private String passwd;
-	private String username;
-	private String email;
-	private int upoint;
-	private String regdate;
-	// 생성자 Construct ALT+SHITF+S
+	private String  userid;
+	private String  passwd;
+	private String  username;
+	private String  email;
+	private int     upoint;
+	private String  regdate;
+	
+	//Getter / Setter
 	public UserDto() {}
 	public UserDto(String userid, String passwd, String username, String email, int upoint, String regdate) {
-		super();
 		this.userid = userid;
 		this.passwd = passwd;
 		this.username = username;
@@ -19,7 +19,6 @@ public class UserDto {
 		this.upoint = upoint;
 		this.regdate = regdate;
 	}
-	// getter/setter
 	public String getUserid() {
 		return userid;
 	}
@@ -56,11 +55,11 @@ public class UserDto {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	//ToString
+	
+	//toString
 	@Override
 	public String toString() {
 		return "UserDto [userid=" + userid + ", passwd=" + passwd + ", username=" + username + ", email=" + email
 				+ ", upoint=" + upoint + ", regdate=" + regdate + "]";
-	}
-	
+	}	
 }
