@@ -65,7 +65,7 @@
 				</tr>
 				<tr>
 					<td><span class ="red">*</span>새 비밀번호 확인</td>
-					<td><input type="password" name="passwd" id="passwd2" /></td>
+					<td><input type="password" id="passwd2" /></td>
 				</tr>
 				<tr>
 					<td><span class ="red">*</span>이름</td>
@@ -97,12 +97,12 @@
 	</main>
 		<!-- Javascript 코딩  -->
 	<script>
-	  const formEl     = document.querySelector('form');
-	  const useridEl   = document.querySelector('[name="userid"]');
-	  const passwdoldEl   = document.querySelector('#passwdold');
-	  const passwdEl   = document.querySelector('#passwd');
-	  const passwd2El  = document.querySelector('#passwd2');
-	  const usernameEl = document.querySelector('[name="username"]');
+	  const formEl      = document.querySelector('form');
+	  const useridEl    = document.querySelector('[name="userid"]');
+	  const passwdoldEl = document.querySelector('#passwdold');
+	  const passwdEl    = document.querySelector('#passwd');
+	  const passwd2El   = document.querySelector('#passwd2');
+	  const usernameEl  = document.querySelector('[name="username"]');
 	  
 	  formEl.addEventListener('submit', function( e ) {
 		  

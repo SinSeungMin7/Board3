@@ -64,10 +64,10 @@ namespace="com.green.user.mapper.UserMapper" : interface 위치
 	
 	<update id = "updateUser">
 		UPDATE TUSER
-		SET	   PASSWD   = #{ passwd },
+		SET	   PASSWD   = #{ passwd   },
 		       USERNAME = #{ username },
-		       EMAIL    = #{ email }
-		WHERE  USERID = #{ userid }
+		       EMAIL    = #{ email    }
+		WHERE  USERID   = #{ userid }
 	</update>
 	
   
