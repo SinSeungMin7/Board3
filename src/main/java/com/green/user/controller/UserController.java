@@ -72,12 +72,42 @@ public class UserController {
 		
 		// 목록으로 이동
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("redirect:/Users/List");
+		mv.setViewName("redirect:/Users/List"); // 작업을 마치고 어떤화면으로 이동할지
 		
 		return mv;
 	}
 	
-	// 수정
+	// 수정 폼 요청 : 수정 버튼 클릭시 기존 데이터를 가지고 수정페이지로 이동합니다
+	// /Users/UpdateForm
+	@RequestMapping("/UpdateForm")
+	public ModelAndView updateForm(UserDto userDto) {
+		// 넘어온 userDto 정보
+		System.out.println( "넘어온 userDto : " + userDto );
+		
+		// 수정을 위해 db에서 조회한 정보
+		UserDto user = userMapper.getUser(userDto);
+		// 조회된 정보
+		System.out.println( "조회된 userDto : " + user );
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("users/update");
+		mv.addObject("user", user);
+		return mv;
+	}
+	
+	// 수정 받기
 	// /Users/Update
+	@RequestMapping("/Update")
+	public ModelAndView update(UserDto userDto) {
+		
+		userMapper.updateUser( userDto );
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:/Users/List");
+		return mv;
+	}
+	
+	
+	
 	
 }

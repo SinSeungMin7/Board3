@@ -42,10 +42,33 @@ namespace="com.green.user.mapper.UserMapper" : interface 위치
 		ORDER BY USERID ASC  		 	
 	</select>
 	
+	<!-- 사용자 조회 -->
+	<select id = "getUser">
+		SELECT   USERID,
+				 PASSWD,
+		         USERNAME,
+		         EMAIL,
+		         UPOINT,
+		         TO_CHAR( REGDATE, 'YYYY-MM-DD HH24:MI:SS' ) REGDATE
+		FROM 	 TUSER
+		WHERE    USERID = #{ userid } 
+	</select>
+	
 	<!-- 사용자 삭제 -->
 	<delete id = "deleteUser">
 	 	DELETE FROM TUSER
 		WHERE USERID = #{ userid }
 	</delete>	
+	
+	<!-- 사용자 수정 -->
+	
+	<update id = "updateUser">
+		UPDATE TUSER
+		SET	   PASSWD   = #{ passwd },
+		       USERNAME = #{ username },
+		       EMAIL    = #{ email }
+		WHERE  USERID = #{ userid }
+	</update>
+	
   
 </mapper>
