@@ -17,5 +17,7 @@ public interface UserMapper {
 
 	UserDto getUser(UserDto userDto);
 
+	UserDto getIdDupCheck(UserDto userDto);
+
 
 }

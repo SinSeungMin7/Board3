@@ -54,6 +54,18 @@ namespace="com.green.user.mapper.UserMapper" : interface 위치
 		WHERE    USERID = #{ userid } 
 	</select>
 	
+	<!-- 아이디 중복확인 -->
+	<select id="getIdDupCheck">
+	    SELECT   USERID,
+				 PASSWD,
+		         USERNAME,
+		         EMAIL,
+		         UPOINT,
+		         TO_CHAR( REGDATE, 'YYYY-MM-DD HH24:MI:SS' ) REGDATE
+		FROM 	 TUSER
+		WHERE    USERID = #{ userid } 
+	</select>
+	
 	<!-- 사용자 삭제 -->
 	<delete id = "deleteUser">
 	 	DELETE FROM TUSER
